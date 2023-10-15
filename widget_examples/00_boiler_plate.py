@@ -1,6 +1,15 @@
 """Use this module to generate a basic window and run the example widgets
 """
 
+""" Lecture 0. VS Code, Python, and PySide2 setup
+
+1. Show the download page for vs code
+2. Show installing python
+3. Pip install PySide2
+4. Write the boilerplate main window and show vs code setup
+
+"""
+
 import sys  # TODO know exactly why you need this
 
 from PySide2 import QtWidgets
