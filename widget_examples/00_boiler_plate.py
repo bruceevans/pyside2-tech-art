@@ -7,10 +7,13 @@
 2. Show installing python
 3. Pip install PySide2
 4. Write the boilerplate main window and show vs code setup
+    - Python extension
+    - Docstring extension
+    - Bear Theme
 
 """
 
-import sys  # TODO know exactly why you need this
+import sys
 
 from PySide2 import QtWidgets
 
@@ -39,12 +42,20 @@ class WidgetExplorer(QtWidgets.QMainWindow):
 
 
 def run():
-    """Run the thing!
+    """Run the app and window instance
     """
+    # NOTE (bevans)
+    # Passing sys.argv allows for passing command line arguments to
+    # the Qt application
     app = QtWidgets.QApplication(sys.argv)
     explorer = WidgetExplorer()
     explorer.show()
-    sys.exit(app.exec_())  # TODO know why you need to do this
+
+    # NOTE (bevans)
+    # This will just give the status code of the app
+    # back to the parent process, helpful if other parts of the system need
+    # detech the program's status
+    sys.exit(app.exec_())
 
 
 if __name__ == "__main__":

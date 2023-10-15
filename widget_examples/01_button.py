@@ -26,7 +26,9 @@ class WidgetExplorer(QtWidgets.QMainWindow):
         """
         main_layout = QtWidgets.QVBoxLayout()
 
-        # TODO what does adding a parent here actually mean?
+        # NOTE (Bevans)
+        # Setting the parent allows the widget to return the parent
+        # via the widget.parent() method
         self.button_one = QtWidgets.QPushButton("Button 1")
         # self.button_one.setAutoDefault(True)
         main_layout.addWidget(self.button_one)
@@ -37,8 +39,11 @@ class WidgetExplorer(QtWidgets.QMainWindow):
         # to display an actual ampersand, use ‘&&’
         self.button_two = QtWidgets.QPushButton(f"&Button 2 - Pressed {self.counter} times")
         self.button_two.setToolTip("Tooltip for button 2")
-
         main_layout.addWidget(self.button_two)
+
+        self.button_toggle = QtWidgets.QPushButton("Toggle Button")
+        self.button_toggle.setCheckable(True)
+        main_layout.addWidget(self.button_toggle)
 
         central_widget = QtWidgets.QWidget()
         central_widget.setLayout(main_layout)
@@ -64,7 +69,7 @@ def run():
     app = QtWidgets.QApplication(sys.argv)
     explorer = WidgetExplorer()
     explorer.show()
-    sys.exit(app.exec_())  # TODO know why you need to do this
+    sys.exit(app.exec_())
 
 
 if __name__ == "__main__":
