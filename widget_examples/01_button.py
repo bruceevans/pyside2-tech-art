@@ -29,9 +29,8 @@ class WidgetExplorer(QtWidgets.QMainWindow):
         # NOTE (Bevans)
         # Setting the parent allows the widget to return the parent
         # via the widget.parent() method
-        self.button_one = QtWidgets.QPushButton("Button 1")
-        # self.button_one.setAutoDefault(True)
-        main_layout.addWidget(self.button_one)
+        self.button = QtWidgets.QPushButton("Button")
+        main_layout.addWidget(self.button)
 
         # NOTE (bevans)
         # The ampersand in front of a character will make that char a shortcut
@@ -45,13 +44,15 @@ class WidgetExplorer(QtWidgets.QMainWindow):
         self.button_toggle.setCheckable(True)
         main_layout.addWidget(self.button_toggle)
 
+        self.menu_button = QtWidgets.QPushButton("Menu Button")
+        main_layout.addWidget(self.menu_button)
+
         central_widget = QtWidgets.QWidget()
         central_widget.setLayout(main_layout)
 
         # Format the window
         self.setCentralWidget(central_widget)
         self.setWindowTitle("Base Widget Explorer")
-        # self.setMinimumSize(500, 500)
 
     def _connect_signals(self):
         """Connect all the UI signals

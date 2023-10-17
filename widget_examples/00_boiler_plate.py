@@ -40,7 +40,6 @@ class WidgetExplorer(QtWidgets.QMainWindow):
         """
         pass
 
-
 def run():
     """Run the app and window instance
     """
